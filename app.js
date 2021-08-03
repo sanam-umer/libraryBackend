@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 var app = new express();
+const port = process.env.PORT || 3000;
 
 const bookData = require('./src/model/Bookdata');
 const authorData = require('./src/model/Authordata');
@@ -211,5 +212,4 @@ app.delete('/remove/:id',(req,res)=>{
 
 //Port Configuration
 
-app.listen(3000,()=>
-console.log('Listening at port 3000'));
+app.listen(port,()=>{console.log("server ready at" + port)});
